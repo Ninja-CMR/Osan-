@@ -23,9 +23,9 @@ const { isOpen, toggleMenu, closeMenu } = useMenu();
           @click="toggleMenu"
           class="md:hidden flex flex-col gap-1 focus:outline-none"
       >
+        <span class="w-6 h-0.5 bg-rose-900"></span>
         <span class="w-6 h-0.5 bg-black"></span>
-        <span class="w-6 h-0.5 bg-black"></span>
-        <span class="w-6 h-0.5 bg-black"></span>
+        <span class="w-6 h-0.5 bg-rose-900"></span>
       </button>
     </div>
     <transition name="slide-fade">
@@ -40,7 +40,7 @@ const { isOpen, toggleMenu, closeMenu } = useMenu();
         <a href="#gallery" @click="closeMenu" class="text-lg font-semibold">Gallery</a>
         <a href="#contact" @click="closeMenu" class="text-lg font-semibold">Contact</a>
 
-        <button class="bg-red-800 px-5 py-3 text-white rounded-full font-bold">
+        <button class="bg-rose-900 px-6 py-2 text-white rounded-full font-bold">
           Order Now
         </button>
       </div>
