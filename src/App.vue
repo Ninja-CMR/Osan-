@@ -5,6 +5,7 @@ import welcome from './view/welcome.vue'
 import values from  './components/values.vue'
 import menuTab from './components/menuTab.vue'
 import wineSection from './view/wineSection.vue'
+import Gallery from './view/Gallery.vue'
 </script>
 
 <template>
@@ -14,6 +15,7 @@ import wineSection from './view/wineSection.vue'
   <values/>
   <menuTab/>
   <wineSection/>
+  <Gallery/>
 </template>
 
 <style scoped>
