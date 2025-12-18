@@ -6,6 +6,7 @@ import values from  './components/values.vue'
 import menuTab from './components/menuTab.vue'
 import wineSection from './view/wineSection.vue'
 import Gallery from './view/Gallery.vue'
+import ReservationSection from "./view/ReservationSection.vue";
 </script>
 
 <template>
@@ -16,6 +17,7 @@ import Gallery from './view/Gallery.vue'
   <menuTab/>
   <wineSection/>
   <Gallery/>
+  <ReservationSection/>
 </template>
 
 <style scoped>
