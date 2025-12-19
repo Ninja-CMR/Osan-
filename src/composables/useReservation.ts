@@ -1,9 +1,17 @@
-
 import { useForm } from 'vee-validate';
 import * as yup from 'yup';
 
-export function useReservation(whatsappNumber = "2376XXXXXXXX") {
+interface ReservationForm {
+    name: string;
+    email: string;
+    phone: string;
+    date: string;
+    time: string;
+    guests: string;
+    requests?: string;
+}
 
+export function useReservation(whatsappNumber: string = "2376XXXXXXXX") {
     const schema = yup.object({
         name: yup.string().required('Le nom est requis'),
         email: yup.string().email('Email invalide').required('L\'email est requis'),
@@ -14,21 +22,22 @@ export function useReservation(whatsappNumber = "2376XXXXXXXX") {
         requests: yup.string().nullable()
     });
 
-    // 2. Initialisation du formulaire
-    const { defineField, handleSubmit, errors, resetForm, isSubmitting } = useForm({
+    // 2. Passer l'interface au useForm
+    const { defineField, handleSubmit, errors, isSubmitting } = useForm<ReservationForm>({
         validationSchema: schema,
         initialValues: {
             guests: '2 Guests',
             requests: ''
         }
     });
-    const [name, nameProps] = defineField('name');
-    const [email, emailProps] = defineField('email');
-    const [phone, phoneProps] = defineField('phone');
-    const [date, dateProps] = defineField('date');
-    const [time, timeProps] = defineField('time');
-    const [guests, guestsProps] = defineField('guests');
-    const [requests, requestsProps] = defineField('requests');
+
+    const [name] = defineField('name');
+    const [email] = defineField('email');
+    const [phone] = defineField('phone');
+    const [date] = defineField('date');
+    const [time] = defineField('time');
+    const [guests] = defineField('guests');
+    const [requests] = defineField('requests');
 
     const onSubmit = handleSubmit((values) => {
         const message = `*Nouvelle Réservation OSAN*%0A` +
@@ -41,15 +50,8 @@ export function useReservation(whatsappNumber = "2376XXXXXXXX") {
             `*Couverts:* ${values.guests}%0A` +
             `*Notes:* ${values.requests || 'Aucune'}`;
 
-        const url = `https://wa.me/${whatsappNumber}?text=${message}`;
-        window.open(url, '_blank');
-
+        window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
     });
 
-    return {
-        name, email, phone, date, time, guests, requests,
-        errors,
-        isSubmitting,
-        onSubmit
-    };
+    return { name, email, phone, date, time, guests, requests, errors, isSubmitting, onSubmit };
 }

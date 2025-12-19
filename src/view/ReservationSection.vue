@@ -1,6 +1,7 @@
 <script setup>
 import ReservationForm from '../components/reservation.vue';
-import { MapPinIcon, PhoneIcon, EnvelopeIcon, ClockIcon } from '@heroicons/vue/24/outline';
+import MapCard from '../components/mapCard.vue';
+import {  MapPinIcon,PhoneIcon, EnvelopeIcon, ClockIcon } from '@heroicons/vue/24/outline';
 </script>
 
 <template>
@@ -59,8 +60,9 @@ import { MapPinIcon, PhoneIcon, EnvelopeIcon, ClockIcon } from '@heroicons/vue/2
           </div>
 
           <div class="w-full h-48 bg-gray-200 rounded-3xl flex flex-col items-center justify-center border-2 border-dashed border-gray-300">
-            <MapPinIcon class="size-10 text-rose-900 mb-2" />
-            <p class="text-gray-500 font-medium">Map integration placeholder</p>
+            <div class="lg:col-span-5 h-full w-full">
+              <MapCard />
+            </div>
           </div>
         </div>
       </div>

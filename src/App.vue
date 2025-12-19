@@ -7,6 +7,7 @@ import menuTab from './components/menuTab.vue'
 import wineSection from './view/wineSection.vue'
 import Gallery from './view/Gallery.vue'
 import ReservationSection from "./view/ReservationSection.vue";
+import Footer from './components/Footer.vue'
 </script>
 
 <template>
@@ -18,6 +19,7 @@ import ReservationSection from "./view/ReservationSection.vue";
   <wineSection/>
   <Gallery/>
   <ReservationSection/>
+  <Footer/>
 </template>
 
 <style scoped>
