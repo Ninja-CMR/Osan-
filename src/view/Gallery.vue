@@ -10,7 +10,7 @@ import imageExperienceDishes from '../assets/Gallery/imageExperienceDishes.jpg'
 <template>
   <div class="space-y-20 py-10 px-6">
 
-    <section class="text-center">
+    <section id="gallery" class="text-center">
       <div class="flex flex-col items-center mt-[70px] py-2 gap-2
               px-5 md:px-24 lg:px-48 mb-10">
         <h1 class="text-4xl md:text-5xl text-center font-extrabold text-rose-900 pb-1">

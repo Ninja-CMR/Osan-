@@ -12,12 +12,12 @@ const { isOpen, toggleMenu, closeMenu } = useMenu();
       <nav class="hidden md:flex flex-row justify-around gap-5 bg-white p-3 font-bold">
         <a href="#home"  class="text-lg font-semibold">Home</a>
         <a href="#menu"  class="text-lg font-semibold">Menu</a>
-        <a href="#lounge"  class="text-lg font-semibold">Lounge</a>
+        <a href="#gallery"  class="text-lg font-semibold">Lounge</a>
         <a href="#reservation"  class="text-lg font-semibold">Reservation</a>
         <a href="#gallery"  class="text-lg font-semibold">Gallery</a>
-        <a href="#contact"  class="text-lg font-semibold">Contact</a>
+        <a href="#reservation"  class="text-lg font-semibold">Contact</a>
       </nav>
-      <button class="hidden md:block bg-rose-900 px-6 py-2 text-white rounded-full font-bold cursor-pointer">Reserve now</button>
+      <a href="#reservation" class="hidden md:block bg-rose-900 px-6 py-2 text-white rounded-full font-bold cursor-pointer">Reserve now</a>
 
       <button
           @click="toggleMenu"
@@ -35,14 +35,14 @@ const { isOpen, toggleMenu, closeMenu } = useMenu();
       >
         <a href="#home" @click="closeMenu" class="text-lg font-semibold">Home</a>
         <a href="#menu" @click="closeMenu" class="text-lg font-semibold">Menu</a>
-        <a href="#lounge" @click="closeMenu" class="text-lg font-semibold">Lounge</a>
+        <a href="#gallery" @click="closeMenu" class="text-lg font-semibold">Lounge</a>
         <a href="#reservation" @click="closeMenu" class="text-lg font-semibold">Reservation</a>
         <a href="#gallery" @click="closeMenu" class="text-lg font-semibold">Gallery</a>
-        <a href="#contact" @click="closeMenu" class="text-lg font-semibold">Contact</a>
+        <a href="#reservation" @click="closeMenu" class="text-lg font-semibold">Contact</a>
 
-        <button class="bg-rose-900 px-6 py-2 text-white rounded-full font-bold">
-          Order Now
-        </button>
+        <a href="#reservation" class="bg-rose-900 px-6 py-2 text-white rounded-full font-bold">
+          Reserve now
+        </a>
       </div>
     </transition>
   </header>

@@ -5,7 +5,7 @@ import {  MapPinIcon,PhoneIcon, EnvelopeIcon, ClockIcon } from '@heroicons/vue/2
 </script>
 
 <template>
-  <section class="py-16 px-6 bg-[#FFF1F1]">
+  <section id="reservation" class="py-16 px-6 bg-[#FFF1F1]">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-12">
         <h1 class="text-4xl md:text-5xl text-center font-extrabold text-rose-900 pb-1">

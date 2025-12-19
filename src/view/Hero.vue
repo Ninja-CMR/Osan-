@@ -21,13 +21,13 @@
       </p>
       <div class="flex flex-col  sm:flex-row gap-4 sm:gap-6">
         <a
-            href="#find-us"
+            href="#reservation"
             class="flex items-center justify-center gap-2 bg-rose-900 hover:bg-rose-800 px-6 py-3 rounded-3xl text-lg font-semibold transition-all duration-300"
         >
           Reserve your table
         </a>
         <a
-            href="#full-menu"
+            href="#menu"
             class="flex items-center gap-2 justify-center  text-rose-900 bg-white  px-6 py-4 rounded-3xl text-lg font-semibold transition-all duration-300"
         >
           <img src="../assets/hero%20picture/heroIcon.png" class="w-[32px]" />

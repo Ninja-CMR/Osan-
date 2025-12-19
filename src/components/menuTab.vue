@@ -8,7 +8,7 @@ const categories = ref(menuCategories);
 
 <template>
 
-  <div class ="flex flex-col items-center mt-[30px] py-2 gap-2
+  <div id="menu" class ="flex flex-col items-center mt-[30px] py-2 gap-2
               px-5 md:px-24 lg:px-48">
     <h1 class="text-4xl md:text-5xl text-center mt-[80px] font-extrabold text-rose-900 pb-1">
       Our menu
