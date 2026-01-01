@@ -1,15 +1,41 @@
 <script setup lang="ts">
-import {useMenu} from '../composables/useMenu.ts'
-
+import { ref, onMounted, onUnmounted } from 'vue'
+import { useMenu } from '../composables/useMenu.ts'
+import logo from '../assets/logo.png'
 
 const { isOpen, toggleMenu, closeMenu } = useMenu();
-</script>}
+
+
+const isScrolled = ref(false);
+
+const handleScroll = () => {
+
+  isScrolled.value = window.scrollY > 50;
+};
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll);
+});
+</script>
 
 <template>
-  <header>
-    <div class="flex items-center justify-between px-4 md:px-10 py-3">
-      <a href="#home" class="flex-shrink-0"><img src="../assets/logo.png" class="w-[80px] md:w-[90px]"></a>
-      <nav class="hidden md:flex flex-row justify-around gap-5 bg-white p-3 font-bold">
+  <header
+      class="fixed top-0 left-0 w-full z-50 transition-all duration-300"
+      :class="isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'"
+  >
+    <div class="flex items-center justify-between px-4 md:px-10">
+      <a href="#home" class="flex-shrink-0">
+        <img :src="logo" class="w-[80px] md:w-[90px]">
+      </a>
+
+      <nav
+          class="hidden md:flex flex-row justify-around gap-5 p-3 font-bold transition-colors"
+          :class="isScrolled ? 'bg-transparent text-black ' : 'bg-transparent text-white  '"
+      >
         <a href="#home"  class="text-lg font-semibold">Home</a>
         <a href="#menu"  class="text-lg font-semibold">Menu</a>
         <a href="#gallery"  class="text-lg font-semibold">Lounge</a>
@@ -17,6 +43,7 @@ const { isOpen, toggleMenu, closeMenu } = useMenu();
         <a href="#gallery"  class="text-lg font-semibold">Gallery</a>
         <a href="#reservation"  class="text-lg font-semibold">Contact</a>
       </nav>
+
       <a href="#reservation" class="hidden md:block bg-rose-900 px-6 py-2 text-white rounded-full font-bold cursor-pointer">Reserve now</a>
 
       <button
@@ -24,10 +51,11 @@ const { isOpen, toggleMenu, closeMenu } = useMenu();
           class="md:hidden flex flex-col gap-1 focus:outline-none"
       >
         <span class="w-6 h-0.5 bg-rose-900"></span>
-        <span class="w-6 h-0.5 bg-black"></span>
+        <span class="w-6 h-0.5 bg-black" ></span>
         <span class="w-6 h-0.5 bg-rose-900"></span>
       </button>
     </div>
+
     <transition name="slide-fade">
       <div
           v-if="isOpen"

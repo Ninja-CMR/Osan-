@@ -4,7 +4,7 @@
 
 <template>
   <div class="flex flex-col items-center mt-[70px] py-2 gap-2
-              px-5 md:px-24 lg:px-48">
+              px-5 md:px-24 lg:px-48 group animate-fade-in">
     <h1 class="text-4xl md:text-5xl text-center font-extrabold text-rose-900 pb-1">
       Welcome to Osan
     </h1>
@@ -22,5 +22,15 @@
 </template>
 
 <style scoped>
+keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 </style>

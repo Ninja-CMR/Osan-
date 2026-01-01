@@ -7,3 +7,12 @@
     background-size: cover;
     background-position: center;
 }
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+section {
+    transition: opacity 0.5s ease-in-out;
+}
